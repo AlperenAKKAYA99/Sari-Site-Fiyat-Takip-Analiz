@@ -1,3 +1,10 @@
+
+## 🚀 Hemen Deneyin
+
+GitHub projelerini tek tıkla canlı önizlemek için eklentiyi Chrome Web Store üzerinden yükleyin.
+
+👉 **[Chrome Web Store'dan Yükle](https://chromewebstore.google.com/detail/sarı-site-fiyat-takip-ana/bemppjgnkooppdlikaidapbdpndfmmjk)**
+
 # 🌟 Sarı Site Fiyat Takip & Analiz (Chrome Extension)
 
 [![Manifest V3](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-blue.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
