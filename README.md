@@ -1,7 +1,7 @@
 
 ## 🚀 Hemen Deneyin
 
-GitHub projelerini tek tıkla canlı önizlemek için eklentiyi Chrome Web Store üzerinden yükleyin.
+Sarı Site Fiyat Takip & Analiz artık Chrome Web Store'da!
 
 👉 **[Chrome Web Store'dan Yükle](https://chromewebstore.google.com/detail/sarı-site-fiyat-takip-ana/bemppjgnkooppdlikaidapbdpndfmmjk)**
 
