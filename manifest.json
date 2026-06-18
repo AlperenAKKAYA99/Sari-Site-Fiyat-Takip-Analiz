@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Sarı Site Fiyat Takip & Analiz",
+  "short_name": "Sarı Site Takip",
+  "description": "Sarı Site ilanlarında anlık ve geçmişe dönük fiyat takibi, detaylı analiz ve bildirimler sunan gelişmiş araç seti.",
+  "version": "1.5.0",
+  "author": "Alperen Akkaya",
+  "permissions": [
+    "storage",
+    "alarms",
+    "cookies",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://sarisite.alperenakkaya.dev/*",
+    "https://ads.alperenakkaya.dev/*",
+    "https://*.sahibinden.com/*"
+  ],
+  "icons": {
+    "16": "assets/icons/16.png",
+    "32": "assets/icons/32.png",
+    "48": "assets/icons/48.png",
+    "128": "assets/icons/128.png"
+  },
+  "action": {
+    "default_title": "Fiyat Takip Kontrol Paneli",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/16.png",
+      "32": "assets/icons/32.png",
+      "48": "assets/icons/48.png",
+      "128": "assets/icons/128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.sahibinden.com/*"
+      ],
+      "js": [
+        "src/content-scripts/content.js",
+        "src/content-scripts/sarisite-scanner.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://*.sahibinden.com/*"
+      ],
+      "js": [
+        "src/content-scripts/sarisite-hover.js"
+      ],
+      "css": [
+        "src/content-scripts/sarisite-hover.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

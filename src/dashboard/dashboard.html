@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarı Site Fiyat Takip — Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+
+<body>
+  <header class="dash-header">
+    <div class="dash-brand">
+      <img src="../../logo.png" alt="Logo" class="dash-brand-icon">
+      <div>
+        <h1>Sarı Site Fiyat Takip <span class="beta-badge">Açık Beta</span></h1>
+        <div class="dash-brand-sub">Takip Paneli — Detaylı Fiyat Analizi</div>
+      </div>
+    </div>
+    <div class="dash-actions">
+      <div style="display: flex; align-items: center; gap: 10px; margin-right: 16px; font-size: 13px;">
+        <span style="font-weight: 600;">Otomatik Tarama</span>
+        <label class="switch">
+          <input type="checkbox" id="toggle-auto-scan">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button id="btn-hover-settings" class="btn btn-outline hover-settings-button" title="Hover Panel Ayarları">⚙️</button>
+      <button id="btn-scan-all" class="btn btn-primary">🔄 Hepsini Tara</button>
+      <button id="btn-refresh" class="btn btn-outline">↻ Yenile</button>
+      
+
+    </div>
+  </header>
+
+  <div class="stats-bar" id="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">📋 Takip Edilen</div>
+      <div class="stat-value" id="stat-total">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">📉 Fiyatı Düşen</div>
+      <div class="stat-value green" id="stat-drops">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">📈 Fiyatı Yükselen</div>
+      <div class="stat-value red" id="stat-rises">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">➖ Değişmeyen</div>
+      <div class="stat-value amber" id="stat-neutral">—</div>
+    </div>
+  </div>
+
+  <div class="dash-content">
+    <!-- Crawler Status Card -->
+    <div id="crawler-status-card" class="status-card">
+      <div class="status-card-header">
+        <span class="status-card-title">
+          <span id="status-dot" class="status-dot idle"></span>
+          Tarama Durumu
+        </span>
+        <span id="status-badge" class="status-badge idle">Hazır</span>
+      </div>
+      <div class="status-body">
+        <div id="status-message" class="status-msg">Tüm ilanlar güncel. Yeni tarama için hazır.</div>
+        <div class="status-details">
+          <span class="status-detail-item">📋 <span id="status-queue-info">Kuyruk: Boş</span></span>
+          <span class="status-detail-item">⚙️ <span id="status-auto-scan-mode">Otomatik Tarama: Aktif</span></span>
+          <span class="status-detail-item">🕒 <span id="status-last-scan">Son Güncelleme: Yok</span></span>
+        </div>
+        <div id="status-timer-container" style="display: none;" class="progress-track">
+          <div id="status-progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>📋 Tüm İlanlar</span>
+      <div class="view-toggle-buttons">
+        <button id="btn-view-list" class="btn btn-outline active">📄 Liste</button>
+        <button id="btn-view-gallery" class="btn btn-outline">🖼️ Galeri</button>
+      </div>
+    </div>
+    
+    <div class="listings-grid" id="listings-grid">
+      <!-- Dynamic content from dashboard.js will render here -->
+    </div>
+  </div>
+
+  <!-- Price History Modal -->
+  <div id="history-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Fiyat Geçmişi</h3>
+        <button id="modal-close" class="modal-close-btn">✕</button>
+      </div>
+      <div class="modal-body" id="modal-history-content">
+        <!-- Render history table here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" style="max-width: 450px;">
+      <div class="modal-header">
+        <h3 id="settings-modal-title">⚙️ Hover Panel Ayarları</h3>
+        <button id="settings-modal-close" class="modal-close-btn">✕</button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 12px;">
+          <label class="form-row">
+            <span>Hover Paneli Açık</span>
+            <input type="checkbox" id="hover-enabled">
+          </label>
+          <label class="form-row">
+            <span>Hasar Görselini Göster</span>
+            <input type="checkbox" id="hover-show-damage">
+          </label>
+          <label class="form-row">
+            <span>Anahtar Kelime Vurgusu</span>
+            <input type="checkbox" id="hover-highlight-words">
+          </label>
+          <label class="form-row">
+            <span>Gösterim Gecikmesi (ms)</span>
+            <input type="number" id="hover-delay" min="0" step="50">
+          </label>
+          <label class="form-row">
+            <span>Kapatma Gecikmesi (ms)</span>
+            <input type="number" id="hover-hide-delay" min="0" step="50">
+          </label>
+      </div>
+    </div>
+  </div>
+
+  <footer class="dash-footer">
+    <div class="footer-brand">Sarı Site Fiyat Takip — Açık Beta v0.1</div>
+    <div style="margin-top: 6px;">
+      Bir <a href="https://alperenakkaya.dev" target="_blank">alperenakkaya.dev</a> ürünüdür.
+      <span class="footer-divider"></span>
+      <a href="https://pay.alperenakkaya.dev/" target="_blank">☕ Destek Ol</a>
+      <span class="footer-divider"></span>
+      <a href="https://ads.alperenakkaya.dev/" target="_blank">📢 İş Birliği & Reklam</a>
+    </div>
+    <div style="margin-top: 12px; font-size: 11px; opacity: 0.6;">© <span id="copyright-year"></span> alperenakkaya.dev — Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script>
+    (function () {
+      const startYear = 2026;
+      const currentYear = new Date().getFullYear();
+      const el = document.getElementById('copyright-year');
+      el.textContent = currentYear > startYear ? startYear + '-' + currentYear : String(startYear);
+    })();
+  </script>
+
+  <script src="./dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+/* ============================================
+   Sarı Site Hover Bilgi Paneli - Content Styles
+   ============================================ */
+
+/* Popup container */
+.sahipanel-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 727px;
+  height: 100vh;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  filter: drop-shadow(4px 0 24px rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+.sahipanel-popup.sahipanel-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scrollbar styling */
+.sahipanel-popup *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sahipanel-popup *::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: 1px solid #f1f5f9;
+}
+
+.sahipanel-popup *::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.sahipanel-popup *::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Skeleton loading animation */
+.sahipanel-skeleton-box {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: sahipanel-shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes sahipanel-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Arrow indicator */
+.sahipanel-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 10001;
+}
+
+.sahipanel-arrow.right {
+  right: -12px;
+  border-width: 12px 0 12px 12px;
+  border-color: transparent transparent transparent #d1d5db;
+  transition: top 0.2s ease;
+}
+
+.sahipanel-arrow.right::after {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: -11px;
+  border-style: solid;
+  border-width: 11px 0 11px 11px;
+  border-color: transparent transparent transparent #fff;
+}
+
+/* Content container */
+.sahipanel-content {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-right: 1px solid #d1d5db;
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content row */
+.sahipanel-content-row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Left column (damage area) */
+.sahipanel-left-col {
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Right column */
+.sahipanel-right-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sahipanel-right-col-full {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Properties area */
+.sahipanel-props {
+  flex: 0 0 auto;
+  padding: 20px;
+  background: #ffffff;
+}
+
+/* Section title */
+.sahipanel-section-title {
+  font-weight: bold;
+  color: #111;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+
+/* Grid layout for specs */
+.sahipanel-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* Location item */
+.sahipanel-location-item {
+  grid-column: 1 / -1;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 11.5px;
+  background: #f8fafc;
+  color: #1e293b;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spec item */
+.sahipanel-spec-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 11.5px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.3;
+  transition: background 0.15s ease;
+}
+
+.sahipanel-spec-item:hover {
+  background: #f8fafc;
+}
+
+.sahipanel-spec-label {
+  color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sahipanel-spec-value {
+  color: #111827;
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Description area */
+.sahipanel-description {
+  flex: 1 1 50%;
+  overflow-y: auto;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #222;
+  background: #fdfdfd;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Keyword highlight */
+.sahipanel-highlight {
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+/* Iframe for damage area */
+.sahipanel-damage-iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+/* Price history container */
+.sahipanel-price-history {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.sahipanel-price-history-placeholder {
+  border: 1px dashed #d1d5db;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 11.5px;
+  color: #888;
+  background: #f9fafb;
+}
+
+/* No description */
+.sahipanel-no-desc {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+/* Disabled overlay */
+.sahipanel-disabled-badge {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10001;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.sahipanel-disabled-badge.show {
+  opacity: 1;
+  transform: translateY(0);
+}

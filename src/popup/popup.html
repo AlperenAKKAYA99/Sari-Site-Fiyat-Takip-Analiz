@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sarı Site Fiyat Takip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/popup.css">
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <img src="../../logo.png" alt="Logo" class="brand-logo">
+      <h1 class="brand-title">Sarı Site Fiyat Takip <span class="beta-badge">Beta</span></h1>
+    </div>
+    <span class="count-badge" id="fav-count">0 İlan</span>
+  </header>
+
+  <!-- Auto Scan Toggle Bar -->
+  <div class="settings-bar">
+    <span class="settings-bar-label">Otomatik Arka Plan Taraması</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle-auto-scan">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Hover Panel Settings Card -->
+  <div class="status-card" id="hover-settings-card">
+    <div class="status-card-header" id="hover-settings-toggle">
+      <span class="status-card-title">⚙️ Hover Panel Ayarları</span>
+      <span style="display: flex; align-items: center; gap: 6px;">
+        <span id="hover-settings-icon" style="font-size: 10px; color: var(--text-muted); transition: transform 0.25s;">▼</span>
+      </span>
+    </div>
+    <div class="status-body" id="hover-settings-body" style="display: grid; gap: 10px;">
+      <label class="form-row">
+        <span>Hover Paneli Açık</span>
+        <input type="checkbox" id="hover-enabled">
+      </label>
+      <label class="form-row">
+        <span>Hasar Görselini Göster</span>
+        <input type="checkbox" id="hover-show-damage">
+      </label>
+      <label class="form-row">
+        <span>Anahtar Kelime Vurgusu</span>
+        <input type="checkbox" id="hover-highlight-words">
+      </label>
+      <label class="form-row">
+        <span>Gösterim Gecikmesi (ms)</span>
+        <input type="number" id="hover-delay" min="0" step="50">
+      </label>
+      <label class="form-row">
+        <span>Kapatma Gecikmesi (ms)</span>
+        <input type="number" id="hover-hide-delay" min="0" step="50">
+      </label>
+    </div>
+  </div>
+
+  <!-- Crawler Status Card -->
+  <div id="crawler-status-card" class="status-card">
+    <div class="status-card-header" id="status-card-toggle">
+      <span class="status-card-title">
+        <span id="status-dot" class="status-dot idle"></span>
+        Tarama Durumu
+        <span id="status-toggle-chevron"
+          style="font-size: 9px; display: inline-block; transition: transform 0.25s ease; margin-left: 3px; color: var(--text-muted);">▼</span>
+      </span>
+      <span id="status-badge" class="status-badge idle">Hazır</span>
+    </div>
+    <div class="status-body">
+      <div id="status-message" class="status-msg">Tüm ilanlar güncel. Yeni tarama için hazır.</div>
+      <div class="status-details">
+        <span id="status-queue-info">Kuyruk: Boş</span>
+        <span id="status-auto-scan-mode" style="font-weight: 600;">Otomatik Tarama: Aktif</span>
+      </div>
+      <div class="status-details" style="margin-top: 4px; border-top: 1px dashed var(--border); padding-top: 4px;">
+        <span id="status-last-scan">Son Güncelleme: Yok</span>
+      </div>
+      <div id="status-timer-container" style="display: none;" class="progress-track">
+        <div id="status-progress-bar" class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="content">
+    <button id="btn-open-dashboard" class="btn btn-primary">
+      🖥️ Takip Panelini Aç
+    </button>
+    <button id="btn-scan-now" class="btn btn-outline">
+      🔄 Hemen Tara
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="https://pay.alperenakkaya.dev/" target="_blank" class="btn-support">
+      ☕ Destek Ol / Bağış Yap
+    </a>
+    <div class="footer-links">
+      <span>İş birliği & Reklam:</span>
+      <a href="https://ads.alperenakkaya.dev/" target="_blank" class="footer-link">ads.alperenakkaya.dev</a>
+    </div>
+  </footer>
+
+  <script src="./popup.js"></script>
+</body>
+
+</html>
