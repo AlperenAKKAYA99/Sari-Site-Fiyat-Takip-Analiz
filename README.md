@@ -5,6 +5,11 @@ Sarı Site Fiyat Takip & Analiz artık Chrome Web Store'da!
 
 👉 **[Chrome Web Store'dan Yükle](https://chromewebstore.google.com/detail/sarı-site-fiyat-takip-ana/bemppjgnkooppdlikaidapbdpndfmmjk)**
 
+## 🔒 Gizlilik Politikası
+Kullanıcı verilerinin nasıl işlendiği hakkında detaylı bilgi için Gizlilik Politikamızı inceleyebilirsiniz:
+
+👉 **[Privacy Policy](https://alperenakkaya.dev/privacy.php?app=sari_site)**
+
 # 🌟 Sarı Site Fiyat Takip & Analiz (Chrome Extension)
 
 [![Manifest V3](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-blue.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
