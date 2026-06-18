@@ -161,6 +161,26 @@ Eklentiyi tarayıcınızda çalıştırmak için aşağıdaki adımları takip e
 
 ---
 
+## 🖼️ Ekran Görüntüleri
+
+<p align="center">
+  <img width="921" height="576" alt="ss1" src="https://raw.githubusercontent.com/AlperenAKKAYA99/Sari-Site-Fiyat-Takip-Analiz/refs/heads/main/ss/ss1.jpg" />
+</p>
+
+<p align="center">
+  <img width="921" height="576" alt="ss2" src="https://raw.githubusercontent.com/AlperenAKKAYA99/Sari-Site-Fiyat-Takip-Analiz/refs/heads/main/ss/ss2.jpg" />
+</p>
+
+<p align="center">
+  <img width="921" height="576" alt="ss3" src="https://raw.githubusercontent.com/AlperenAKKAYA99/Sari-Site-Fiyat-Takip-Analiz/refs/heads/main/ss/ss3.jpg" />
+</p>
+
+<p align="center">
+  <img width="921" height="576" alt="ss4" src="https://raw.githubusercontent.com/AlperenAKKAYA99/Sari-Site-Fiyat-Takip-Analiz/refs/heads/main/ss/ss4.jpg" />
+</p>
+
+---
+
 ## 🤝 İletişim ve Destek
 
 Reklam ve iş birliği ortaklıkları için [ads.alperenakkaya.dev](https://ads.alperenakkaya.dev/) adresini ziyaret edebilir veya proje destek kanalı üzerinden [pay.alperenakkaya.dev/ads](https://pay.alperenakkaya.dev/ads) ile destek sağlayabilirsiniz.
