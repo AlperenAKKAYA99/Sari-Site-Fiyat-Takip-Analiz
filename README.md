@@ -10,6 +10,10 @@ Kullanıcı verilerinin nasıl işlendiği hakkında detaylı bilgi için Gizlil
 
 👉 **[Privacy Policy](https://alperenakkaya.dev/privacy.php?app=sari_site)**
 
+## 📄 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında yayınlanmıştır. Ayrıntılar için LICENSE dosyasını inceleyebilirsiniz.
+
 # 🌟 Sarı Site Fiyat Takip & Analiz (Chrome Extension)
 
 [![Manifest V3](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-blue.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
